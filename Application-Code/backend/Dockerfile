@@ -2,11 +2,11 @@ FROM node:14
 
 WORKDIR /app
 
-copy package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
-COPy . .
+COPY . .
 
 CMD ["node", "index.js"]
 
