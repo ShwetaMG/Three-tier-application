@@ -5,8 +5,6 @@ resources:
   - ../../base
 images:
   - name: shwetamg20/three-tier-backend
-    newTag: initial
+    newTag: 2c49e9d5b29e8f7b96204806fe5b8c4da3e9f5b2
   - name: shwetamg20/three-tier-frontend
     newTag: initial
-
-    
