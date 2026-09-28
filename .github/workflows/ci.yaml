@@ -5,7 +5,7 @@ on:
     branches: [main]
     paths:
       - 'Application-Code/**'
-      - '.github/workflows/ci.yml'
+      - '.github/workflows/ci.yaml'
 
 permissions:
   contents: write
