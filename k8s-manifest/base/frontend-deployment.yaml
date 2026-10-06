@@ -25,11 +25,11 @@ spec:
       - name: frontend
         image: public.ecr.aws/e3i3d3z5/three-tier-frontend-d:latest
         imagePullPolicy: Always
-        env:
-          - name: REACT_APP_BACKEND_URL
-            value: "http://my-todo-list.duckdns.org/api/tasks" #$API_ELB_PUBLIC_FQDN #add your API_Load_Balancer DNS manually here if app does not run
+        #env:
+          #- name: REACT_APP_BACKEND_URL
+          #  value: "http://my-todo-list.duckdns.org/api/tasks" #$API_ELB_PUBLIC_FQDN #add your API_Load_Balancer DNS manually here if app does not run
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         # livenessProbe:
         #   httpGet:
         #     path: /

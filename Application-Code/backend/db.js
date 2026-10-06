@@ -5,9 +5,9 @@ module.exports = async () => {
         const connectionParams = {
             // user: process.env.MONGO_USERNAME,
             // pass: process.env.MONGO_PASSWORD,
-            useNewUrlParser: true,
+            //useNewUrlParser: true,
             // useCreateIndex: true,
-            useUnifiedTopology: true,
+            //useUnifiedTopology: true,
         };
         const useDBAuth = process.env.USE_DB_AUTH || false;
         if(useDBAuth){

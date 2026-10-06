@@ -1,11 +1,24 @@
-FROM node:24-alpine
+# Stage 1: build the static React app
+FROM node:24-alpine AS build
 
 WORKDIR /app
 
 COPY package*.json ./
-
+RUN npm install -g npm@latest
 RUN npm install
 
 COPY . .
 
-CMD ["npm","start"]
+ARG REACT_APP_BACKEND_URL
+ENV REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
+
+RUN npm run build
+
+# Stage 2: serve only the compiled static files
+FROM nginx:alpine
+
+COPY --from=build /app/build /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

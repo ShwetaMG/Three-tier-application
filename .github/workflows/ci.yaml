@@ -81,6 +81,9 @@ jobs:
           push: false
           load: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/three-tier-frontend:${{ github.sha }}
+          build-args: |
+            REACT_APP_BACKEND_URL=${{ vars.REACT_APP_BACKEND_URL }}
+            
       - name: Trivy vulnerability scan
         uses: aquasecurity/trivy-action@v0.36.0
         with:
