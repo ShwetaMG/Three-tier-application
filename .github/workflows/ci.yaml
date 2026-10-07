@@ -60,7 +60,7 @@ jobs:
           format: table
           severity: CRITICAL,HIGH
           exit-code: 1
-          skip-dirs: /usr/local, /opt, /root/.npm 
+          #skip-dirs: /usr/local, /opt, /root/.npm 
       - name: Push image (only runs if Trivy passed)
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/three-tier-backend:${{ github.sha }}
 
@@ -91,8 +91,8 @@ jobs:
           image-ref: ${{ secrets.DOCKERHUB_USERNAME }}/three-tier-frontend:${{ github.sha }}
           format: table
           severity: CRITICAL,HIGH
-          exit-code: 1
-          skip-dirs: /usr/local, /opt, /root/.npm  
+          exit-code: 1 
+          #skip-dirs: /usr/local, /opt, /root/.npm 
       - name: Push image (only runs if Trivy passed)
         run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/three-tier-frontend:${{ github.sha }}
 

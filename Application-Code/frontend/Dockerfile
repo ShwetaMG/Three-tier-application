@@ -17,6 +17,8 @@ RUN npm run build
 # Stage 2: serve only the compiled static files
 FROM nginx:alpine
 
+RUN apk update && apk upgrade --no-cache
+
 COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 80
