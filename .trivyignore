@@ -1,0 +1,11 @@
+# npm CLI's own internal dependencies — not part of our application code,
+# only exist in the image because node:24-alpine bundles npm.
+# Not reachable at runtime; our app never invokes npm inside the container.
+
+# No fix released upstream yet as of Oct 2026
+CVE-2026-93748
+
+# Fix exists upstream but not yet adopted by npm's own package.json
+CVE-2026-102276
+CVE-2026-102278
+CVE-2026-19534
