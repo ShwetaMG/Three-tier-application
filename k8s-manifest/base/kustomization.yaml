@@ -8,4 +8,4 @@ resources:
   - full_stack_lb.yaml
   - mongo-db/deploy.yaml
   - mongo-db/service.yaml
-  - mongo-db/secrets.yaml
+  - mongo-db/sealed-secret.yaml
