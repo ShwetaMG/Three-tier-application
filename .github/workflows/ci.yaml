@@ -6,6 +6,8 @@ on:
     paths:
       - 'Application-Code/**'
       - '.github/workflows/ci.yaml'
+      
+  workflow_dispatch:
 
 permissions:
   contents: write

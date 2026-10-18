@@ -11,8 +11,7 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-    - host: my-todo-list.duckdns.org
-      http:
+    - http:
         paths:
           - path: /api
             pathType: Prefix
